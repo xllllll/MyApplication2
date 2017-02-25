@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    xmlns:ads="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:id="@+id/kazan"
+        android:layout_width="100dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/c"
+            android:id="@+id/imageView"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right" />
+
+        <TextView
+            android:text="Game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:layout_gravity="center_vertical"
+            android:textStyle="normal|bold" />
+    </FrameLayout>
+
+    <TextView
+        android:text="Coins : 90"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_margin="15dp"
+        android:textStyle="normal|bold" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="45dp">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+
+            android:background="#7ad8e9"
+            app:tabIndicatorColor="#ffffff"
+            app:tabTextColor="#ffffff"
+            app:tabIndicatorHeight="4dp"
+            app:tabPaddingStart="50dp"
+            app:tabPaddingEnd="50dp" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="45dp" />
+
+    </FrameLayout>
+
+    <Button
+        android:text="LOAD MORE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:background="#0f0"
+        android:textColor="#ffffff"
+        android:textSize="36sp" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-2076428269239567/2597412538"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+    </com.google.android.gms.ads.AdView>
+</RelativeLayout>
