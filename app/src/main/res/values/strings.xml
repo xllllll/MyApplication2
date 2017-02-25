@@ -8,4 +8,8 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="facebook_app_id">291984377866929</string>
+    <string name="bannerid">291984377866929</string>
+    <string name="interid">ca-app-pub-2076428269239567/8529208130</string>
+    <string name="title_activity_oyun2">oyun2</string>
+
 </resources>

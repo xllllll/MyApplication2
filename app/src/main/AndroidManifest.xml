@@ -12,7 +12,10 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
         <activity android:name=".MainActivity" />
         <activity android:name=".Splah">
             <intent-filter>
@@ -22,7 +25,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".oyun" />
-        <activity android:name=".Selection"></activity>
+        <activity android:name=".Selection" />
+        <activity
+            android:name=".oyun2"
+            android:label="@string/title_activity_oyun2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

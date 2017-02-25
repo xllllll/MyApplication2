@@ -1,6 +1,7 @@
 package barron.pw.myapplication;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,14 +44,16 @@ public class NewAdapter extends ArrayAdapter<ChatNew> {
             int i1 = r.nextInt( 59 - 1) + 1;
 
 
+        SharedPreferences sharedpreferences = getContext().getSharedPreferences(getContext().getPackageName(), Context.MODE_PRIVATE);
 
-        if ((i1 % 2) == 0) {
+        int myInt = sharedpreferences.getInt("coins", 0);
+        if ((i1 % 2) == 0 && myInt<3000) {
             // number is even
-            lastseen.setText("*** 300 Coins ***");
+            lastseen.setText("*** 3000 Coins ***");
             lastseen.setTextColor(getContext().getResources().getColor(R.color.colorPrimaryDark));
 
 
-            kontak.setText("*** 300 Coins ***");
+            kontak.setText("*** 3000 Coins ***");
             kontak.setTextColor(getContext().getResources().getColor(R.color.colorPrimaryDark));
         }
 

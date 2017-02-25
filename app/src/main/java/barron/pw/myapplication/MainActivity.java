@@ -47,6 +47,12 @@ public class MainActivity extends AppCompatActivity {
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);}
     }
     @Override
+    public void onBackPressed()
+    {
+
+        startActivity(new Intent(MainActivity.this,Selection.class));
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -124,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         mInterstitialAd = new InterstitialAd(this);
 
         // set the ad unit ID
-        mInterstitialAd.setAdUnitId("ca-app-pub-2076428269239567/8529208130");
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.interid));
 
         AdRequest adRequest2 = new AdRequest.Builder()
                 .build();
@@ -148,7 +154,7 @@ Button load = (Button)findViewById(R.id.button);
                 mInterstitialAd = new InterstitialAd(getApplicationContext());
 
                 // set the ad unit ID
-                mInterstitialAd.setAdUnitId("ca-app-pub-2076428269239567/8529208130");
+                mInterstitialAd.setAdUnitId(getResources().getString(R.string.interid));
 
                 AdRequest adRequest2 = new AdRequest.Builder()
                         .build();
