@@ -33,6 +33,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdListener;
@@ -50,11 +51,12 @@ import java.util.StringTokenizer;
  * front of the card out and the back of the card in. The reverse animation is played when the user
  * presses the system Back button or the "photo" action bar button.</p>
  */
-public class CardFlipActivity extends AppCompatActivity
+public class CardFlipActivity extends Activity
         implements FragmentManager.OnBackStackChangedListener {
     /**
      * A handler object, used for deferring UI operations.
      */
+
     private Handler mHandler = new Handler();
     AdRequest adRequest2;
     /**
@@ -68,7 +70,18 @@ public class CardFlipActivity extends AppCompatActivity
         setContentView(R.layout.activity_card_flip);
 
 
-
+        View decorView = getWindow().getDecorView();
+// Hide both the navigation bar and the status bar.
+// SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
+// a general rule, you should design your app to hide the status bar whenever you
+// hide the navigation bar.
+        int uiOptions =   View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav bar
+                | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
+                | View.SYSTEM_UI_FLAG_IMMERSIVE;
+        decorView.setSystemUiVisibility(uiOptions);
 
         mInterstitialAd = new InterstitialAd(this);
 
@@ -110,7 +123,12 @@ public class CardFlipActivity extends AppCompatActivity
         // button (either "photo" or "info").
         getFragmentManager().addOnBackStackChangedListener(this);
     }
+    @Override
+    public void onBackPressed()
+    {
 
+        startActivity(new Intent(CardFlipActivity.this,MainActivity.class));
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -212,7 +230,7 @@ public class CardFlipActivity extends AppCompatActivity
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View v =  inflater.inflate(R.layout.fragment_card_front, container, false);
-            ImageView frnt = (ImageView) v.findViewById(R.id.frnt);
+            LinearLayout frnt = (LinearLayout) v.findViewById(R.id.frnt);
 
             frnt.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -224,8 +242,28 @@ public class CardFlipActivity extends AppCompatActivity
 
 
 
+                    getFragmentManager()
+                            .beginTransaction()
 
+                            // Replace the default fragment animations with animator resources representing
+                            // rotations when switching to the back of the card, as well as animator
+                            // resources representing rotations when flipping back to the front (e.g. when
+                            // the system Back button is pressed).
+                            .setCustomAnimations(
+                                    R.animator.card_flip_right_in, R.animator.card_flip_right_out,
+                                    R.animator.card_flip_left_in, R.animator.card_flip_left_out)
 
+                            // Replace any fragments currently in the container view with a fragment
+                            // representing the next page (indicated by the just-incremented currentPage
+                            // variable).
+                            .replace(R.id.container, new CardBackFragment())
+
+                            // Add this transaction to the back stack, allowing users to press Back
+                            // to get to the front of the card.
+                            .addToBackStack(null)
+
+                            // Commit the transaction.
+                            .commit();
 
 
 
