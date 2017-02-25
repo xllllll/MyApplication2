@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
           //  startActivity(new Intent(MainActivity.this,oyun.class));
-                startActivity(new Intent(MainActivity.this,oyun.class));
+                startActivity(new Intent(MainActivity.this,CardFlipActivity.class));
 
 //                mInterstitialAd = new InterstitialAd(getApplicationContext());
 //

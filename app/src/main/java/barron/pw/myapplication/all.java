@@ -36,6 +36,28 @@ public class all extends Fragment {
                 ContactsContract.RawContacts.ACCOUNT_TYPE + "= ?",
                 new String[] { "com.whatsapp" },
                 null);
+
+        Cursor f = getActivity().getContentResolver().query(
+                ContactsContract.RawContacts.CONTENT_URI,
+                new String[] { ContactsContract.RawContacts.CONTACT_ID, ContactsContract.RawContacts.DISPLAY_NAME_PRIMARY },
+                ContactsContract.RawContacts.ACCOUNT_TYPE + "= ?",
+                new String[] { "com.facebook" },
+                null);
+        Cursor d = getActivity().getContentResolver().query(
+                ContactsContract.RawContacts.CONTENT_URI,
+                new String[] { ContactsContract.RawContacts.CONTACT_ID, ContactsContract.RawContacts.DISPLAY_NAME_PRIMARY },
+                ContactsContract.RawContacts.ACCOUNT_TYPE + "= ?",
+                new String[] { "com.twitter" },
+                null);
+        Cursor e = getActivity().getContentResolver().query(
+                ContactsContract.RawContacts.CONTENT_URI,
+                new String[] { ContactsContract.RawContacts.CONTACT_ID, ContactsContract.RawContacts.DISPLAY_NAME_PRIMARY },
+                ContactsContract.RawContacts.ACCOUNT_TYPE + "= ?",
+                new String[] { "com.instagram" },
+                null);
+        e.getColumnCount();
+        d.getColumnCount();
+        f.getColumnCount();
         View v= inflater.inflate(R.layout.fragment_stalkers, container, false);
 
         final ListView listView = (ListView) v.findViewById(R.id.kontaklist);
@@ -50,7 +72,7 @@ public class all extends Fragment {
 
 
 
-        for(int i=0; i<2; i++){
+        for(int i=0; i<3; i++){
             Random r = new Random();
             int i1 = r.nextInt( c.getCount() - 1) + 1;
             c.moveToPosition(i1);
