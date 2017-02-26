@@ -293,7 +293,13 @@ public class CardFlipActivity extends Activity
             TextView coins =(TextView) v.findViewById(R.id.coins);
 
             Random r = new Random();
-            int i1 = r.nextInt( 21 - 1) + 1;
+            int i1 = r.nextInt( 13 - 1) + 1;
+
+
+
+
+
+
             coins.setText(String.valueOf(myInt +i1));
             sayi.setText(String.valueOf(i1));
 
@@ -306,7 +312,7 @@ public class CardFlipActivity extends Activity
                 @Override
                 public void onClick(View v) {
 
-                        getFragmentManager().popBackStack();
+                       // getFragmentManager().popBackStack();
 
 
                                   }

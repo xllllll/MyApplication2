@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    xmlns:ads="http://schemas.android.com/apk/res-auto">
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl">
 
     <FrameLayout
         android:layout_height="wrap_content"
@@ -31,7 +32,7 @@
     </FrameLayout>
 
     <TextView
-        android:text="Coins : 90"
+        android:text="Coins : n/a"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"

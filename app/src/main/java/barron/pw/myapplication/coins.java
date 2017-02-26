@@ -30,7 +30,7 @@ public class coins extends Fragment {
         fm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(),CardFlipActivity.class));
+                startActivity(new Intent(getContext(),sonoyun.class));
             }
         });
         return  v;

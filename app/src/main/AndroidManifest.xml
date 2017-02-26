@@ -15,8 +15,8 @@
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
-        <activity android:name=".CardFlipActivity" />
 
+        <activity android:name=".CardFlipActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Splah">
             <intent-filter>
@@ -30,7 +30,11 @@
         <activity
             android:name=".oyun2"
             android:label="@string/title_activity_oyun2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".oyun3" />
+        <activity android:name=".sonoyun" />
+        <activity android:name=".gameover" android:parentActivityName=".MainActivity"></activity>
+
     </application>
 
 </manifest>

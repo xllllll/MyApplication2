@@ -109,7 +109,8 @@ for(int i=0; i<5; i++){
         ChatNew cn =new ChatNew(c.getString(contactNameColumn));
         adapter.add(cn);
 
-}MainActivity.tamam=true;
+}
+    MainActivity.tamam=true;
     }
 
 

@@ -7,16 +7,16 @@
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="facebook_app_id">291984377866929</string>
+
+    <string name="facebook_app_id">1832604543660894</string>
     <string name="bannerid">291984377866929</string>
     <string name="interid">ca-app-pub-2076428269239567/8529208130</string>
     <string name="title_activity_oyun2">oyun2</string>
-
-
+    <string name="fb_login_protocol_scheme">1832604543660894</string>
 
     <!-- Titles -->
 
-
+    <string name="action_settings">Simple Crossfade</string>
 
     <string name="title_crossfade">Simple Crossfade</string>
 
