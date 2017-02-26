@@ -53,7 +53,7 @@ public class Splah extends Activity {
             public void run() {
                 // This method will be executed once the timer is over
                 // Start your app main activity
-                Intent i = new Intent(Splah.this, Selection.class);
+                Intent i = new Intent(Splah.this, MainActivity.class);
                 startActivity(i);
 
                 // close this activity
